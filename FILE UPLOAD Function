@@ -56,3 +56,32 @@ Content-Type: application/x-httpd-php
 Content-Length: 49
 
 <?php echo file_get_contents('/path/to/file'); ?>
+
+
+
+
+############################################################################################
+############################################################################################
+
+Uploads
+1) exploit.php | exploit.exe
+2) exploit.pHP | exploit.eXe
+3) Upload exploit.php or exploit.pHP with "content-type: image/jpeg" in request.
+4) Upload geninune expected file (jpeg or pdf) -> 200 OK
+   Changle "filename=file.html" -> if 200 OK ( then its not checking filename its checking the file content to validate image/pdf )
+   Keep "filename=file.html" & at the end of file content add "<script>alert(1)</script>" in new line  ---> if 200 OK  file uploaded 
+   Now try to open then uploaded file  in website -> should give alert 1 pop up
+   
+   
+
+
+
+
+
+
+
+
+
+
+
+
