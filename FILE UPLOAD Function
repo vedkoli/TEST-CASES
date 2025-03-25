@@ -70,7 +70,7 @@ Uploads
 4) Upload exploit.php or exploit.pHP with "content-type: image/jpeg" in request.
 
 5) Upload .php/.exe file -> if error then could its validating the filename and content type maybe
-    use null bytes in name e.g : file.php%00.jpeg or file.php%00.pdf
+    use null bytes in name e.g : "file.jpeg%00.exe" or "file.pdf%00.php"   [ You can try url encoding of '&'if this gives error ]
     try changing content-type to image/jpeg or application/exec
 
 6) Upload geninune expected file (jpeg or pdf) -> 200 OK
