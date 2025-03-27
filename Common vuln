@@ -1,0 +1,30 @@
+
+++++++++ BACKBOX TESTING ++++++++
+IMPROPER COOKIE ATTRIBUTES ......checked in burp (PAth: \ , Secure flag not set)
+Missing security headers .... checked in burp
+MISSING or Improper CSP header ... checked in burp
+USERNAME Enumuration from error message
+Clickjacking enabled
+Insecure HTTP HEADERS allowed ( debug, OPTIONS, DELETE, etc )
+Info disclosure : e.g : www.web.com/scripts/validate.js --> has info about server or scripts
+Weak CAPTCHA ---> Enter valid CAPTCHA code once then put same code for once again irrespective of Captcha code displayed.
+Improper cache control Derivatives .......... checked in burp response [cache-control: Private ] [cache-control: no-cache] 
+Directory listing e.g : www.apple.com/abc/pdf/ , www.apple.com/abc_DOC/  -> lists the directory
+Improper ERROR Hnadling .... in url put www.apple.com/> (some special char) and check webpage error message , is it detailed or backend explosing or general one.
+
+
+
+
+++++++ GREYBOX TESTING ++++++
+MISSING 2MFA ... from login page of website
+IMPROPER COOKIE ATTRIBUTES ......checked in burp
+Improper cache control Derivatives .......... checked in burp response [cache-control: Private ] [cache-control: no-cache] 
+Banner grabbing .. in respose the server name is present.
+Poor input validation : eg. = in Forms or regestration page in name,pan,adhar,etc column the specail chars are allowed like !@#, <script>, etc
+Week password policy  ..... no strong password restrictions are set while setting the password in "RESET" or "Registration" page.
+USERNAME Enumuration from error message
+Version discloser ... in inpect element or look in page source or any 3rd party ,js or .bootstrp link in use and if they have it.
+missing security headers
+Force Browsing ..... files or zip which are available for download without auhentication
+
+
