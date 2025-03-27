@@ -15,7 +15,10 @@ Improper ERROR Hnadling .... in url put www.apple.com/>!@ (some special char) an
 nmap -p- -Pn --script vulners apple.com   <--- check open ports
 Unnessercy page acessable without login
 Autocomplete feature enabled in forms 
-
+Weak encoding scheme --> Check if any data like Authorization :ASEDWEDAWDASDAW or PPI data in HTTP header is decodeable
+CROSS Domain Scripting : $.get('https://sakurity.com/jqueryxss')
+DEBUG Header -> OK in respose content in burp
+HTTP verb tempering ( POST -> ATTACKER -> CHECK RESPOSSE IF 200 OK )
 
 
 
@@ -42,6 +45,11 @@ Autocomplete feature enabled in forms
 Use Retire.js plugin in chrome to find older/ vulnerable componenets
 concurent login
 UAT url publicly available
+Check if test_user has fucntion to create user , and can u change its role to admin : SUPERADMIN or ADMIN or ISADMIN in request
+If site has opton of puting data and exporting CSV out of it then you can try for "=1+2" in input and check if after exporting csv its giving answer or not
+Unmasked PPI data in request
+Identical session ID pre and post login
+
 
 
 
